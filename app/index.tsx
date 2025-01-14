@@ -19,6 +19,7 @@ export default function Index() {
     const response = await fetch("https://official-joke-api.appspot.com/random_joke")
     const data : Joke = await response.json();
     setJoke(data.setup);
+    setPunchline(data.punchline);
 
       }
   
@@ -32,7 +33,6 @@ export default function Index() {
       <Text>Click for a Joke</Text>
       <button onClick={get_joke}>Get Joke</button>
       <Text>{joke}</Text>
-      <button onClick={get_joke}>Get Punchline</button>
       <div>
         <text>{punchline}</text>
       </div>
